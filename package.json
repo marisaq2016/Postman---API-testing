@@ -1,0 +1,23 @@
+{
+  "name": "postman-api-testing",
+  "version": "1.0.0",
+  "description": "For API testing using Postman",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "api-tests": "newman run tests/JSONPlaceholder-Test.postman_collection.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marisaq2016/Postman-API-testing.git"
+  },
+  "author": "Marisa Quiaot",
+  "bugs": {
+    "url": "https://github.com/marisaq2016/Postman-API-testing/issues"
+  },
+  "homepage": "https://github.com/marisaq2016/Postman-API-testing#readme",
+  "dependencies": {
+    "newman": "^5.2.0"
+  }
+}
