@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "8af5029b-6eb5-4a32-a1a9-98815ac37a2c",
+		"name": "JSONPlaceholder Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get a post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49042d51-51b3-454d-b611-fa9a7d05888a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let expected_title = \"qui est esse\"\r",
+							"let expected_body = \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(`The title should be \"${expected_title}\"`, function () {\r",
+							"    pm.expect(jsonData[0].title).to.eql(expected_title);\r",
+							"});\r",
+							"\r",
+							"pm.test(`The body should be \"${expected_body}\"`, function () {\r",
+							"    pm.expect(jsonData[0].body).to.eql(expected_body);\r",
+							"});\r",
+							"\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body(\"[ { \"userId\": 1, \"id\": 2, \"title\": \"qui est esse\", \"body\": \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\" } ]\");\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}/posts?id=2",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts?id=2",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 05:58:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "998"
+						},
+						{
+							"key": "X-Ratelimit-Reset",
+							"value": "1599577501"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=43200"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"126-A82LaoO5+5hTmJpgY0kzb9h2kE8\""
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "HIT"
+						},
+						{
+							"key": "Age",
+							"value": "323"
+						},
+						{
+							"key": "cf-request-id",
+							"value": "0531f0a13400001a3a77345200000001"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "5d301d485b541a3a-SIN"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userId\": 1,\n        \"id\": 2,\n        \"title\": \"qui est esse\",\n        \"body\": \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "11313156-5b00-4233-b296-2e8ed97dc3e3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let expected_name = \"repellat consequatur praesentium vel minus molestias voluptatum\"\r",
+							"let expected_body = \"maiores sed dolores similique labore et inventore et\\nquasi temporibus esse sunt id et\\neos voluptatem aliquam\\naliquid ratione corporis molestiae mollitia quia et magnam dolor\"\r",
+							"let jsonData = pm.response.json();\r",
+							"console.log(jsonData)\r",
+							"\r",
+							"pm.test(\"Check the name returned in the API\", function () {\r",
+							"    pm.expect(jsonData[0].name).to.eql(expected_name);\r",
+							"});\r",
+							"pm.test(\"Check the body returned in the API\", function () {\r",
+							"    pm.expect(jsonData[0].body).to.eql(expected_body);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}/comments?postId=2&email=Dallas@ole.me",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "2"
+						},
+						{
+							"key": "email",
+							"value": "Dallas@ole.me"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a post",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f90b2184-1798-49b2-be2e-5e1e655dbb03",
+						"exec": [
+							"let randomString = Math.random().toString(36).substring(2);\r",
+							"let postTitle = \"Mar post title \" + randomString;\r",
+							"let postBody = \"Mar post body \" + randomString;\r",
+							"\r",
+							"pm.environment.set(\"postTitle\", postTitle);\r",
+							"pm.environment.set(\"postBody\", postBody);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ee6ba4e-af77-4917-a5f1-df5295772c26",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}/posts?userId=2&title={{postTitle}}&body={{postBody}}",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "2"
+						},
+						{
+							"key": "title",
+							"value": "{{postTitle}}"
+						},
+						{
+							"key": "body",
+							"value": "{{postBody}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the newly post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c9e122d8-4f5d-4827-87f4-84cb9c3e8da7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}/posts?userId=1&title={{postTitle}}",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "title",
+							"value": "{{postTitle}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e6e227ca-0779-400e-bf87-49b60527f385",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0974f82e-26d4-4b1d-a061-0a9874c418f5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
