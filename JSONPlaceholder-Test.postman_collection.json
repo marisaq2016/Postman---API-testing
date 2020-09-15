@@ -41,9 +41,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{Base_URL}}/posts?id=2",
+					"raw": "https://jsonplaceholder.typicode.com/posts?id=2",
+					"protocol": "https",
 					"host": [
-						"{{Base_URL}}"
+						"jsonplaceholder",
+						"typicode",
+						"com"
 					],
 					"path": [
 						"posts"
@@ -215,9 +218,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{Base_URL}}/comments?postId=2&email=Dallas@ole.me",
+					"raw": "https://jsonplaceholder.typicode.com/comments?postId=2&email=Dallas@ole.me",
+					"protocol": "https",
 					"host": [
-						"{{Base_URL}}"
+						"jsonplaceholder",
+						"typicode",
+						"com"
 					],
 					"path": [
 						"comments"
@@ -271,9 +277,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{Base_URL}}/posts?userId=2&title={{postTitle}}&body={{postBody}}",
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=2&title={{postTitle}}&body={{postBody}}",
+					"protocol": "https",
 					"host": [
-						"{{Base_URL}}"
+						"jsonplaceholder",
+						"typicode",
+						"com"
 					],
 					"path": [
 						"posts"
@@ -316,9 +325,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{Base_URL}}/posts?userId=1&title={{postTitle}}",
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1&title={{postTitle}}",
+					"protocol": "https",
 					"host": [
-						"{{Base_URL}}"
+						"jsonplaceholder",
+						"typicode",
+						"com"
 					],
 					"path": [
 						"posts"
