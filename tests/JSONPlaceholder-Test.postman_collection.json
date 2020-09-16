@@ -14,7 +14,7 @@
 						"id": "49042d51-51b3-454d-b611-fa9a7d05888a",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							"\r",
 							"let expected_title = \"qui est esse\"\r",
